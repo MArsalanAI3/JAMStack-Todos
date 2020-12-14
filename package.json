@@ -1,0 +1,12 @@
+{
+  "name": "JAMStack-Todos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/MArsalanAI3/JAMStack-Todos.git",
+  "author": "MArsalanAI3 <marsalanai3@gmail.com>",
+  "license": "MIT",
+  "private":true,
+  "workspaces":[
+    "components/*"
+  ]
+}
