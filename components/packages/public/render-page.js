@@ -10200,7 +10200,7 @@ var _require2 = __webpack_require__(/*! @theme-ui/presets */ "../../node_modules
 
 var newTheme = Object.assign({}, Deep, {
   sizes: {
-    Container: 1024
+    container: 1024
   }
 });
 
