@@ -1,6 +1,7 @@
 const React = require("react");
 const { ThemeProvider }=require( 'theme-ui');
 const {Deep} = require('@theme-ui/presets');
+const {Provider}=require('./nelifyIdentity-Context');
 
 
 const newTheme={
