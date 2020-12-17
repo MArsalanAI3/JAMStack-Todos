@@ -10214,26 +10214,26 @@ exports.wrapRootElement = wrapRootElement;
 /*!***********************************!*\
   !*** ./nelifyIdentity-Context.js ***!
   \***********************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var React = __webpack_require__(/*! react */ "react");
 
+var useEffect = __webpack_require__(/*! react */ "react");
+
+var useState = __webpack_require__(/*! react */ "react");
 
 var netlifyIdentity = __webpack_require__(/*! netlify-identity-widget */ "../../node_modules/netlify-identity-widget/build/netlify-identity.js");
 
-var IdentityContext = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({});
+var IdentityContext = React.createContext({});
 exports.IdentityContext = IdentityContext;
 
-exports.provider = function (props) {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(),
+var identityProvider = function identityProvider(props) {
+  var _useState = useState(),
       user = _useState[0],
       setUser = _useState[1];
 
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+  useEffect(function () {
     netlifyIdentity.init({});
   });
   netlifyIdentity.on("login", function (user) {
@@ -10244,13 +10244,15 @@ exports.provider = function (props) {
     netlifyIdentity.close();
     setUser();
   });
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(IdentityContext.provider, {
+  return /*#__PURE__*/React.createElement(IdentityContext.provider, {
     value: {
       identity: netlifyIdentity,
       user: undefined
     }
   }, props.children);
 };
+
+exports.Provider = identityProvider;
 
 /***/ }),
 
